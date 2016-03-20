@@ -1,85 +1,96 @@
-<!doctype html>
+---
+layout: default
+---
+<div class="page-content">
+  <div class="mdl-grid">
+  {% if site.post_type == 'highlight' %}
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <title>Liuting Du</title>
+    {% for post in site.posts %}
+    {% if post.highlight %}
 
-    <!-- Add to homescreen for Chrome on Android -->
-    <meta name="mobile-web-app-capable" content="yes">
-    <link rel="icon" sizes="192x192" href="images/android-desktop.png">
+    <div class="section-highlight section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
 
-    <!-- Add to homescreen for Safari on iOS -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Liuting">
-    <link rel="apple-touch-icon-precomposed" href="images/ios-desktop.png">
+      <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone" {% if post.image %} style="background: url('{{ post.image }}') center/cover;" {% endif %}></header>
 
-    <!-- Tile icon for Win8 (144x144 + tile color) -->
-    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
-    <meta name="msapplication-TileColor" content="#3372DF">
-
-    <link rel="shortcut icon" href="images/favicon.png">
-
-    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
-    <!--
-    <link rel="canonical" href="http://www.example.com/">
-    -->
-
-    <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.cyan-teal.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="styles.css">
-    <style>
-    #view-source {
-      position: fixed;
-      display: block;
-      right: 0;
-      bottom: 0;
-      margin-right: 40px;
-      margin-bottom: 40px;
-      z-index: 900;
-    }
-    </style>
-  </head>
-  <body>
-    <div class="ld-layout mdl-layout mdl-layout--fixed-header mdl-js-layout mdl-color--grey-100">
-      <!-- <header class="ld-header mdl-layout__header mdl-layout__header--scroll mdl-color--grey-100 mdl-color-text--grey-800">
-        <div class="mdl-layout__header-row">
-          <span class="mdl-layout-title">Liuting Du</span>
-          <div class="mdl-layout-spacer"></div>
-          </div>
+      <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+        <div class="mdl-card__supporting-text">
+          <h4>{{ post.title }}</h4>
+          <p>{{ post.excerpt }}</p>
         </div>
-      </header> -->
-      <div class="ld-ribbon"></div>
-      <main class="ld-main mdl-layout__content">
-        <div class="ld-container mdl-grid">
-          <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
-          <div class="ld-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
-            <div class="ld-crumbs mdl-color-text--grey-500">
-            </div>
-            <h3>Liuting Du</h3>
-              <p>
-                 哦天哪真的不知道写点啥哦天哪真的不知道写点啥哦天哪真的不知道写点啥哦天哪真的不知道写点啥哦天哪真的不知道写点啥哦天哪
-                 真的不知道写点啥哦天哪真的不知道写点啥哦天哪真的不知道写点啥哦天哪真的不知道写点啥哦天哪真的不知道写点啥哦天哪真的不知道写点啥哦天哪真的不知道写点啥哦天哪真的不知道写点啥哦天哪真的不知道写点啥哦天哪真的不知道写点啥哦天哪真的不知道写点啥哦天哪真的不知道写点啥哦天哪真的不知道写点啥哦天哪真的不知道写点啥哦天哪真的不知道写点啥哦天哪真的不知道写点啥哦天哪真的不知道写点啥
-              </p>
-              <p>
-                 哦天哪真的不知道写点啥哦天哪真的不知道写点啥哦天哪真的不知道写点啥哦天哪真的不知道写点啥哦天哪真的不知道写点啥哦天哪
-                 真的不知道写点啥哦天哪真的不知道写点啥哦天哪真的不知道写点啥哦天哪真的不知道写点啥哦天哪真的不知道写点啥哦天哪真的不知道写点啥哦天哪真的不知道写点啥哦天哪真的不知道写点啥哦天哪真的不知道写点啥哦天哪真的不知道写点啥哦天哪真的不知道写点啥哦天哪真的不知道写点啥哦天哪真的不知道写点啥哦天哪真的不知道写点啥哦天哪真的不知道写点啥哦天哪真的不知道写点啥哦天哪真的不知道写点啥
-              </p>
-          </div>
+        <div class="mdl-card__actions">
+          <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="{{ post.url | prepend: site.baseurl }}">Read More</a>
         </div>
-        <!-- <footer class="ld-footer mdl-mini-footer">
-          <div class="mdl-mini-footer--left-section">
-            <ul class="mdl-mini-footer--link-list">
-              <li><a href="#">Contact</a></li>
-            </ul>
-          </div>
-        </footer> -->
-      </main>
+      </div>
+
+      <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn-high-{{ post.id }}">
+        <i class="material-icons">share</i>
+      </button>
+      <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn-high-{{ post.id }}">
+        <li><a href="https://www.facebook.com/dialog/share?app_id={{site.facebook_app_id}}&display=page&href={{ post.url | prepend: site.baseurl }}&redirect_uri={{ site.baseurl }}" class="mdl-menu__item">Facebook</a></li>
+        <li><a href="https://twitter.com/share?url={{ post.url | prepend: site.baseurl }}&text={{ post.title }}&via={{ site.twitter_username }}" class="mdl-menu__item">Twitter</a></li>
+        <li><a href="https://plus.google.com/share?url={{ post.url | prepend: site.baseurl }}" class="mdl-menu__item">Google+</a></li>
+      </ul>
+
     </div>
-  </body>
-</html>
+
+    {% else %}
+
+    <div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--4-col-desktop mdl-cell--4-col-tablet mdl-cell--12-col-phone">
+      <div class="mdl-card__title" {% if post.image %} style="background: url('{{ post.image }}') center/cover;" {% endif %}>
+        <h2 class="mdl-card__title-text">{{ post.title }}</h2>
+      </div>
+      <div class="mdl-card__supporting-text">
+        <span>{{ post.date | date: "%b %-d, %Y" }}</span>
+        <p>{{ post.excerpt }}</p>
+      </div>
+      <div class="mdl-card__actions mdl-card--border">
+        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="{{ post.url | prepend: site.baseurl }}">Read More</a>
+      </div>
+      <div class="mdl-card__menu">
+        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" id="post-{{ post.id }}">
+          <i class="material-icons">share</i>
+        </button>
+        <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="post-{{ post.id }}">
+          <li><a href="https://www.facebook.com/dialog/share?app_id={{site.facebook_app_id}}&display=page&href={{ post.url | prepend: site.baseurl }}&redirect_uri={{ site.baseurl }}" class="mdl-menu__item">Facebook</a></li>
+          <li><a href="https://twitter.com/share?url={{ post.url | prepend: site.baseurl }}&text={{ post.title }}&via={{ site.twitter_username }}" class="mdl-menu__item">Twitter</a></li>
+          <li><a href="https://plus.google.com/share?url={{ post.url | prepend: site.baseurl }}" class="mdl-menu__item">Google+</a></li>
+        </ul>
+      </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+
+  {% else %}
+
+    {% for post in site.posts %}
+
+    <div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--4-col-desktop mdl-cell--4-col-tablet  mdl-cell--12-col-phone">
+      <div class="mdl-card__title" {% if post.image %} style="background: url('{{ post.image }}') center/cover;" {% endif %}>
+        <h2 class="mdl-card__title-text">{{ post.title }}</h2>
+      </div>
+      <div class="mdl-card__supporting-text">
+        <span>{{ post.date | date: "%b %-d, %Y" }}</span>
+        <p>{{ post.excerpt }}</p>
+      </div>
+      <div class="mdl-card__actions mdl-card--border">
+        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="{{ post.url | prepend: site.baseurl }}">
+          Read More
+        </a>
+      </div>
+      <div class="mdl-card__menu">
+        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" id="post-{{ post.id }}">
+          <i class="material-icons">share</i>
+        </button>
+        <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="post-{{ post.id }}">
+          <li><a href="https://www.facebook.com/dialog/share?app_id={{site.facebook_app_id}}&display=page&href={{ post.url | prepend: site.baseurl }}&redirect_uri={{ site.baseurl }}" class="mdl-menu__item">Facebook</a></li>
+          <li><a href="https://twitter.com/share?url={{ post.url | prepend: site.baseurl }}&text={{ post.title }}&via={{ site.twitter_username }}" class="mdl-menu__item">Twitter</a></li>
+          <li><a href="https://plus.google.com/share?url={{ post.url | prepend: site.baseurl }}" class="mdl-menu__item">Google+</a></li>
+        </ul>
+      </div>
+    </div>
+
+    {% endfor %}
+
+  {% endif %}
+  </div>
+</div>

@@ -1,0 +1,21 @@
+# Site settings
+title: Liuting Du
+email: liutingdu@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+  I'm a Software Engineer specializing in Android & Java. This is my personal blog.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://liutingdu.com" # the base hostname & protocol for your site
+twitter_username: liutingdu
+github_username:  liutingdu
+facebook_app_id: 12345
+
+# Layout settings
+header_type: default  # values [ drawer, default ]
+post_type: highlight    # values [ highlight, default ]
+pagination_type: default  # values [ ops, default ]
+
+disqus: true
+disqus_shortname: 'liutingdu'
+
+# Build settings
+markdown: kramdown
