@@ -9,6 +9,15 @@ ul, ol, dl, figure,
 }
 
 /**
+ * Link text style
+ */
+a {
+    color: #00838F;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+/**
  * Blockquotes
  */
 blockquote {
@@ -77,4 +86,31 @@ pre {
             fill: $grey-color;
         }
     }
+}
+
+/**
+ * Font size for About
+ */
+ .medium_font {
+   font-family: Roboto, sans-serif;
+   font-size: 16px;
+ }
+
+/**
+* Profile photo
+*/
+.avatar {
+  border-radius: 420px;
+  height: 150px;
+  width: 150px;
+}
+
+.about-section {
+  border-radius: 2px;
+  padding: 40px 56px;
+  margin-bottom: 40px;
+}
+
+.color-text-light-gray {
+  color: #757575;
 }
