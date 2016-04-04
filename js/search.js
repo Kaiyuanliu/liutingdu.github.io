@@ -126,9 +126,10 @@ MIT Licensed
       }
     });
 
-    searchInputEl.addEventListener('input', function onInputChange() {
-      handleInput();
-    });
+    // uncomment out this line if the search box is in use
+    // searchInputEl.addEventListener('input', function onInputChange() {
+    //   handleInput();
+    // });
   }
 
   init.toggle = toggleSearch;
